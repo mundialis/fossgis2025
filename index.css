@@ -1,0 +1,182 @@
+/* mundialis Farben
+#1F1C55
+#8DC63F */
+
+body {
+    width: 100%;
+    font-family: "serif";
+    margin: 0px;
+}
+
+/* Header style at bottom */
+
+h1, h2 {
+    text-align: center;
+    line-height: 1em;
+}
+
+/* a {
+    text-decoration: none;
+    color: #000;
+} */
+
+img.icon {
+    width: 10px;
+    height: 10px;
+    padding-left: .3em;
+    padding-right: .3em;
+    float: none;
+}
+
+main {
+    margin: auto;
+    margin-bottom: 0px;
+    border-radius: 3px;
+    /* background-color: azure; */
+    background-color: powderblue;
+}
+
+#header {
+    background-color: rgb(31, 28, 85);
+    padding: 2em;
+    border-bottom: 25px solid #010007;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+    position: relative;
+    z-index: -1;
+}
+
+marquee {
+    background-color: #fff;
+}
+
+#bday {
+    font-size: 2em;
+}
+
+.flexparent {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flexchild {
+    width: 20%;
+    min-width: 8em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.5em;
+    font-weight: 500;
+    border: solid #1F1C55 1px;
+    /* color: #1F1C55; */
+    /* padding: 1%; */
+    /* margin: 1%; */
+    margin: 10px;
+    border-radius: 1%;
+    background-color: #fffbbc;
+}
+
+.flexchild:hover {
+    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.34);
+    background-color: #fe0000;
+}
+
+side .flexparent,
+.side .flexparent {
+    margin-top: 1em;
+}
+
+side .flexchild,
+.side .flexchild {
+    width: 28%;
+    font-size: 1em;
+    color: #767676;
+    background-image: unset !important;
+}
+
+side .flexchild:hover,
+.side .flexchild:hover {
+    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.34);
+}
+
+.event > .maininfo {
+    text-align: left;
+}
+
+.event > .maininfo p {
+    margin-top: 0em;
+}
+
+.event > .moreinfos {
+    font-size: 0.8em;
+}
+
+@media (max-width: 1500px) {
+    .flexchild,
+    side .flexchild,
+    .side .flexchild  {
+        width: 90%;
+        min-width: 1em;
+    }
+    .event > .maininfo {
+        font-size: larger;
+    }
+}
+
+/* Header style thx to https://codepen.io/ueple/pen/vYYNMVJ */
+
+@keyframes shine {
+    0% {
+      background-position: 110% 0%, 0 0;
+    }
+    100% {
+       background-position: -10% 0%, 0 0;
+    }
+}
+
+h1 {
+	position: relative;
+	display: inline-block;
+    font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 500;
+	font-size: 3.5vw;
+	letter-spacing: 0.5vw;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+[data-silver] {
+	color: #858585; /*fallback solid color*/
+	@supports ((-webkit-background-clip: text) or (background-clip: text)) or (-webkit-background-clip: text) {
+		color: transparent;
+		background-image: linear-gradient(to right, transparent 0%, transparent 45%,white 50%,transparent 55%,transparent 100%), linear-gradient(270deg, #8c8c8c 1.3%, #999 15%, #868686 29.6%, #828282 29.6%, #7d7d7d 31.8%, #797979 31.8%, #6a6a6a 38.9%, #d3d3d3);
+		background-position: 110% 0%, 0 0;
+		background-size: 200% auto, auto;
+		-webkit-background-clip: text;
+		background-clip: text;
+		animation: shine 2s ease-in-out 2 alternate-reverse 2s;
+	}
+	&:before {
+		content: attr(data-silver);
+		color: #fff;
+		position: absolute;
+		z-index: -1;
+		top: -.08vw;
+		left: 0px;
+		text-shadow: black 0px 0.08vw 6px;
+	}
+    @supports ((-webkit-background-clip: text) or (background-clip: text)) or (-webkit-background-clip: text) {
+        &:after {
+            content: attr(data-silver);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to bottom, transparent 0%, transparent 48%, rgba(17, 17, 17, 0.5) 50%, transparent 75%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+    }
+}
