@@ -32,7 +32,7 @@
 </h3>
 <h3>FOSSGIS 2025 Münster</h3>
 <h3 class="vol1">
-    <img id="skyline" src="resources/img/FOSSGIS/FOSSGIS2015_Skyline-Muenster_preview.png">
+    <!-- <img id="skyline" src="resources/img/FOSSGIS/FOSSGIS2015_Skyline-Muenster_preview.png"> -->
     Vol. 3
 </h3>
 <hr>
@@ -47,9 +47,7 @@
     </div>
 
     <div class="center">
-    <!-- <div><img src="../muenster-osm-osm-world-300-blended-animation.gif"></div> -->
-    <!-- <div><img src="../muenster-osm-osm-world-300-tile-anim.gif"></div> -->
-    <div><img src="resources/img/dop_true_color_muenster_1920.png"></div>
+    <div><img src="resources/img/dop_true_color_muenster_1920_tiny.png"></div>
 
     <h4>Weiter wolkenwärts!</a></h4>
     <p>
@@ -79,31 +77,32 @@
 <!-- actinia ###########################################################################-->
 <div id="actinia-intro1" class="step slide" data-x="-25400" data-y="-50" data-scale="14">
 </div>
-<div id="actinia-intro2" class="step slide actinia-intro" data-rel-x="-600" data-rel-y="-1500" data-scale="3">
+<div id="actinia-intro2" class="step slide actinia-intro" data-rel-x="-700" data-rel-y="-1300" data-scale="3">
     <img src="resources/img/actinia-intro-de/was_ist_actinia_1_nobg.svg">
 </div>
 <div id="actinia-intro3" class="step slide actinia-intro" data-rel-x="0" data-rel-y="0" data-scale="3">
     <img src="resources/img/actinia-intro-de/was_ist_actinia_2_nobg.svg">
-<p>Leistungsstarke Lösung für die Verarbeitung, Analyse und Bereitstellung von Geodaten in einer Cloud-Umgebung</p>
+<p>Leistungsstarke Lösung für die Verarbeitung, Analyse und Bereitstellung<br>
+  von Geodaten in einer Cloud-Umgebung</p>
 </div>
-<div id="actinia-intro4" class="step slide actinia-intro markdown" data-rel-x="2300" data-rel-y="1000" data-scale="0.7">
-### Knative
-- Erweiterung der Container-Orchestrierungsplattform Kubernetes
-- Open Source Projekt verwaltet von Cloud Native Computing Foundation (CNCF)
-- __„serverless“__ (Serverlos):
+<div id="actinia-intro4" class="step slide actinia-intro" data-rel-x="2300" data-rel-y="1000" data-scale="0.7">
+<h3>Knative</h3>
+<ul>
+  <li>Open Source Projekt, Erweiterung von Kubernetes</li>
+  <li><b>"serverless"</b> (Serverlos), Knative Serving:</br>
   Anwendungen (Serverless-Apps) werden unabhängig von Serververwaltung gepackt und bereitgestellt,
   bedarfsabhängig ausgeführt und automatisch je nach Bedarf skaliert sowie nur bei Nutzung abgerechnet.
-- __"event-driven"__ (Ereignisgesteuert):
-  > Ereignis = Zustandsänderung (UI, Sensor Input, Nachrichten anderer Programme, ...)
-  > führt zu "event notification" (Ereignisbenachrichtigung)*
-  > Im Vergleich zu "message-driven" (Nachrichtengesteuert) entkoppelt von Konsumenten
-- __"cloud-native"__ (Cloud-nativ):
-  > Ansammlung kleiner, unabhängiger und lose gekoppelter Services = Microservices
-  > Breitstellung in Containern, unabhängige Releases
-- Auch für monolithische Apps bis hin zu Microservices und kleinen Funktionen
-- KNative-Serving - KNative-Eventing
-
-  ** CloudEvents - gemeinsames Event Format für Portabilität und Interoperabilität, per HTTP POST, ereignisspezifische Header, Textkörper
+  </li>
+  <li><b>"event-driven"</b> (Ereignisgesteuert), Knative Eventing:</br>
+  Ereignis = Zustandsänderung (UI, Sensor Input, Benachrichtigungen, ...)
+  führt zu "event notification" (Ereignisbenachrichtigung), z.B. per CloudEvent.</br>
+  Im Vergleich zu "message-driven" (Nachrichtengesteuert) entkoppelt von Konsumenten.
+  </li>
+  <li><b>"cloud-native"</b> (Cloud-nativ):</br>
+  Ansammlung kleiner, unabhängiger und lose gekoppelter Services = Microservices
+  Breitstellung in Containern, unabhängige Releases
+  </li>
+  <li>Auch für monolithische Apps bis hin zu Microservices und kleinen Funktionen</li>
 </div>
 <div class="step slide overview" data-x="-20000" data-y="7000" data-scale="20">
 </div>
@@ -112,16 +111,18 @@
 <div id="cloud1" class="step slide" data-x="-25000" data-y="12500" data-scale="10">
 <h4>Kubernetes Native Earth Observation (KNeo) Platform</h4>
 <ul>
-<li>Open Source Implementierung von <b>event-driven</b>, <b>serverless</b> Computing-Lösungen für die EO-Verarbeitung</li>
-<li><a href="https://knative.dev/docs/serving/"><b>KNative-Serving</b></a>
+<li>Open Source Implementierung von <b>event-driven</b>, <b>serverless</b>
+    Computing-Lösungen für EO
+    <ul>
+<li class="nomargin"><a href="https://knative.dev/docs/serving/"><b>KNative-Serving</b></a>
     : KNeo Applications gepackt als stateless Microservices die CloudEvents empfangen und mit CloudEvents antworten</li>
 <li><a href="https://knative.dev/docs/eventing/"><b>KNative-Eventing</b></a>
     : Messaging-Infrastruktur zur Verbindung der KNeo-Prozessoren untereinander</li>
-<li>Definition neuer <b>CloudEvent</b>-Typen und Parametererweiterungen, geeignet für EO-Anwendungen (geometrische/geographische Operationen), auch in KNative-Triggern</li>
-<li><b>OGC API Processes</b> (Zoo Project, actinia)</li>
-<li><b>STAC</b></li>
-<li>MinIO, Keycloak, OIDC, Fluentd/ELK, Prometheus, MetalLB, RabbitMQ, Kafka, Strimzi, ...</li>
-<li>ESA EOEPCA+ Kompatibilität</li>
+    </ul></li>
+<li>Definition neuer <b>CloudEvent</b>-Typen und Parametererweiterungen, geeignet für EO-Anwendungen
+   (geometrische/geographische Operationen), auch in KNative-Triggern</li>
+<li><b>OGC API Processes</b> (Zoo Project, actinia), <b>STAC</b>, MinIO, Keycloak, OIDC, Fluentd/ELK,
+   Prometheus, MetalLB, RabbitMQ, Kafka, Strimzi, Kompatibilität mit ESA EOEPCA+, ...</li>
 </ul>
 <img class="logo" src="resources/img/kneo/ESA_logo_2020_Deep.png" alt="Logo actinia" id="welcome-fahrrad"/>
 <img class="logo" src="resources/img/kneo/kneo_logo.png" alt="Logo actinia" id="welcome-fahrrad"/>
@@ -135,21 +136,21 @@
 
 <div id="cloud3" class="step slide" data-x="12000" data-y="12500" data-scale="10">
 <ul class="top">
-<li>Installation und Betrieb in einer Knative-Umgebung</li>
-<li>GRASS GIS und andere Geodatenwerkzeuge können effizient und skalierbar in einer modernen Cloud-Infrastruktur einsetzen werden</li>
-<li>bereits vorhandende Komponenten mit Anpassungen:
+<li>Installation und Betrieb in einer <b>Knative-Umgebung</b></li>
+<li>bereits vorhandende Komponenten:
 <ul>
-  <li>actinia-stac-plugin</li>
-  <li>actinia-module-plugin</li>
-  <li>actinia worker für die eigentliche Prozessierung als serverless App</li></ul></li>
+  <li class="nomargin">actinia-stac-plugin</li>
+  <li class="nomargin">actinia-module-plugin</li>
+  <li><b>actinia worker</b> für die eigentliche Prozessierung als serverless App</li></ul></li>
 <li>Komponenten in Entwicklung:
 <ul>
-  <li>Aufsplittung in separate Microservices und Libraries</li>
-  <li>actinia-ogc-api-plugin (POC)</li>
-  <li>actinia-cloud-event-plugin Übersetzung CloudEvent -> actinia Prozesskette und bei Bedarf Rückgabe CloudEvent bei Ergebnis</li>
+  <li class="nomargin">Aufsplittung in separate <b>Microservices</b> und Libraries</li>
+  <li class="nomargin">actinia-ogc-api-plugin (POC)</li>
+  <li><b>actinia-cloud-event-plugin</b> übersetzt CloudEvents in
+         actinia Prozessketten, gibt bei Bedarf CloudEvent zurück</li>
 </ul></li></ul>
 
-<code><pre>
+<pre><code>
     curl --location 'http://localhost:3033/' \
     --header 'Content-Type: application/cloudevents+json' \
     --data '{
@@ -173,7 +174,7 @@
         ]
       }
     }'
-    </pre></code>
+  </code></pre>
 </div>
 
 <div class="step slide overview" data-x="0" data-y="0" data-scale="50">
@@ -235,8 +236,8 @@ Dokumentation
   - Eine zukunftssichere, flexible Lösung für moderne Geodatenverarbeitung
 </div> -->
 
-<div class="step slide overview" data-x="0" data-y="0" data-scale="50">
-</div>
+<!-- <div class="step slide overview" data-x="0" data-y="0" data-scale="50">
+</div> -->
 
 
 <!-- THE END #######################################################################-->
