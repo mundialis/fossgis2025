@@ -1,0 +1,7 @@
+actinia-python-client==0.4.1
+leafmap
+matplotlib
+numpy
+Pillow
+requests
+setuptools
